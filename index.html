@@ -3,149 +3,181 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Custom Sistemas</title>
+    <title>Custom Sistemas — Gestão Pública Inteligente</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <!-- Bootstrap Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/especialidades.css">
-    <link rel="stylesheet" href="css/tecnologias.css">
-    <link rel="stylesheet" href="css/carreira.css">
-    <link rel="stylesheet" href="css/faq.css">
-    <link rel="stylesheet" href="css/newsletter.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+
+    <link rel="stylesheet" href="assets/css/sections/navbar.css">
+    <link rel="stylesheet" href="assets/css/sections/hero.css">
+    <link rel="stylesheet" href="assets/css/sections/stats.css">
+    <link rel="stylesheet" href="assets/css/sections/especialidades.css">
+    <link rel="stylesheet" href="assets/css/sections/tecnologias.css">
+    <link rel="stylesheet" href="assets/css/sections/carreiras.css">
+    <link rel="stylesheet" href="assets/css/sections/faq.css">
+    <link rel="stylesheet" href="assets/css/sections/newsletter.css">
+    <link rel="stylesheet" href="assets/css/sections/footer.css">
+
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+
 </head>
 
 <body>
 
-    <header class="header-main">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-            <div class="container-fluid">
+    <!-- ══════════════════ NAVBAR ══════════════════ -->
+    <nav class="site-nav" id="siteNav">
+        <div class="nav-inner">
+            <a class="nav-brand" href="#">
+                <img src="assets/img/custom_logo.png" alt="Custom Sistemas">
+            </a>
 
-                <!-- Logo + Nome -->
-                <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img src="assets/img/custom_logo.png" alt="Custom Sistemas" class="logo me-2">
-                    <!-- <span class="brand-text">CUSTOM</span> -->
+            <ul class="nav-links">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+
+                <li id="solucoesItem">
+                    <button onclick="toggleMega()">
+                        <span>Soluções</span>
+                        <i class="bi bi-chevron-down chevron"></i>
+                    </button>
+                </li>
+
+                <li><a href="#">Carreira</a></li>
+                <li><a href="#">Treinamentos</a></li>
+                <li><a href="#">Eventos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#" class="btn-custom-primary">
+                    <i class="bi bi-people-fill"></i>
+                    Suporte Técnico
                 </a>
+            </div>
 
-                <!-- Botão Mobile -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <button class="nav-hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
 
-                <!-- Menu -->
-                <div class="collapse navbar-collapse" id="menuPrincipal">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#">
-                                Início
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#">
-                                Sobre
-                            </a>
-                        </li>
-
-                        <!-- Mega Menu -->
-                        <li class="nav-item dropdown position-static">
-                            <a class="nav-link menu-link dropdown-toggle-custom d-flex align-items-center gap-2"
-                                href="#" data-bs-toggle="dropdown">
-
-                                <span>Soluções</span>
-                                <i class="bi bi-chevron-down dropdown-icon"></i>
-                            </a>
-
-
-                            <div class="dropdown-menu mega-menu p-4 shadow-lg">
-                                <div class="row g-4">
-
-                                    <div class="col-md-3 mega-col finance">
-                                        <h6>Gestão Financeira</h6>
-                                        <span class="divider"></span>
-                                        <a class="dropdown-item" href="#">Contabilidade</a>
-                                        <a class="dropdown-item" href="#">Tributos</a>
-                                        <a class="dropdown-item" href="#">Planejamento</a>
-                                    </div>
-
-                                    <div class="col-md-3 mega-col people">
-                                        <h6>Gestão de Pessoas</h6>
-                                        <span class="divider"></span>
-                                        <a class="dropdown-item" href="#">Folha de Pagamento</a>
-                                        <a class="dropdown-item" href="#">RH</a>
-                                    </div>
-
-                                    <div class="col-md-3 mega-col admin">
-                                        <h6>Gestão Administrativa</h6>
-                                        <span class="divider"></span>
-                                        <a class="dropdown-item" href="#">Compras</a>
-                                        <a class="dropdown-item" href="#">Contratos</a>
-                                        <a class="dropdown-item" href="#">Licitação</a>
-                                    </div>
-
-                                    <div class="col-md-3 mega-col transparency">
-                                        <h6>Transparência</h6>
-                                        <span class="divider"></span>
-                                        <a class="dropdown-item" href="#">Portal da Transparência</a>
-                                        <a class="dropdown-item" href="#">Controle Interno</a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#">
-                                Carreira
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#">
-                                Treinamentos
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#">
-                                Eventos
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#">
-                                Contato
-                            </a>
-                        </li>
-
-                    </ul>
-
-                    <!-- Área do Cliente -->
-                    <a href="#" class="btn btn-outline-primary d-flex align-items-center" style="font-size: 1.1rem;">
-                        <i class="bi bi-people-fill me-3" id="suporte-icon"></i> Suporte Tecnico
+    <!-- ══════════════════ MEGA MENU ══════════════════ -->
+    <div class="mega-overlay" id="megaOverlay" onclick="closeMega()">
+        <div class="mega-panel" id="megaPanel">
+            <div class="mega-inner">
+                <div class="mega-intro">
+                    <h3>Nossas Soluções</h3>
+                    <p>Plataformas completas para cada área da gestão pública municipal.</p>
+                    <a href="#" class="mega-all-link">
+                        Ver todas as soluções <i class="bi bi-arrow-right"></i>
                     </a>
+                </div>
 
+                <div class="mega-cols">
+                    <div class="mega-col-group finance">
+                        <h6>Gestão Financeira</h6>
+                        <ul>
+                            <li><a href="#"><i class="bi bi-calculator"></i> Contabilidade</a></li>
+                            <li><a href="#"><i class="bi bi-receipt"></i> Tributos</a></li>
+                            <li><a href="#"><i class="bi bi-graph-up-arrow"></i> Planejamento</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mega-col-group people">
+                        <h6>Gestão de Pessoas</h6>
+                        <ul>
+                            <li><a href="#"><i class="bi bi-cash-stack"></i> Folha de Pagamento</a></li>
+                            <li><a href="#"><i class="bi bi-people"></i> RH</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mega-col-group admin">
+                        <h6>Gestão Administrativa</h6>
+                        <ul>
+                            <li><a href="#"><i class="bi bi-cart3"></i> Compras</a></li>
+                            <li><a href="#"><i class="bi bi-file-text"></i> Contratos</a></li>
+                            <li><a href="#"><i class="bi bi-bank"></i> Licitação</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mega-col-group transparency">
+                        <h6>Transparência</h6>
+                        <ul>
+                            <li><a href="#"><i class="bi bi-globe"></i> Portal da Transparência</a></li>
+                            <li><a href="#"><i class="bi bi-shield-check"></i> Controle Interno</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </div>
 
-    <section class="hero-banner">
-        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- ══════════════════ MOBILE DRAWER ══════════════════ -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <ul class="mobile-nav-list">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li>
+                <button onclick="toggleMobileSub(this)">
+                    Soluções <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="mobile-sub">
+                    <div class="mobile-sub-group">
+                        <h6>Gestão Financeira</h6>
+                        <a href="#">Contabilidade</a>
+                        <a href="#">Tributos</a>
+                        <a href="#">Planejamento</a>
+                    </div>
+                    <div class="mobile-sub-group">
+                        <h6>Gestão de Pessoas</h6>
+                        <a href="#">Folha de Pagamento</a>
+                        <a href="#">RH</a>
+                    </div>
+                    <div class="mobile-sub-group">
+                        <h6>Gestão Administrativa</h6>
+                        <a href="#">Compras</a>
+                        <a href="#">Contratos</a>
+                        <a href="#">Licitação</a>
+                    </div>
+                    <div class="mobile-sub-group">
+                        <h6>Transparência</h6>
+                        <a href="#">Portal da Transparência</a>
+                        <a href="#">Controle Interno</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">Carreira</a></li>
+            <li><a href="#">Treinamentos</a></li>
+            <li><a href="#">Eventos</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+        <div class="mobile-cta">
+            <a href="#" class="btn-custom-primary">
+                <i class="bi bi-people-fill"></i> Suporte Técnico
+            </a>
+        </div>
+    </div>
 
-            <!-- INDICADORES -->
+
+    <!-- ══════════════════ HERO ══════════════════ -->
+    <section class="hero">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
             <div class="carousel-indicators hero-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
-                    aria-current="true"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
             </div>
@@ -156,30 +188,20 @@
                 <div class="carousel-item active">
                     <div class="hero-wrapper">
                         <div class="hero-slide">
-
-                            <div class="hero-text">
-                                <h1>
-                                    Tecnologia inteligente
-                                    para a <span>Gestão Pública</span>
-                                </h1>
-
-                                <p>
-                                    Sistemas completos para contabilidade,
-                                    folha de pagamento, contratos, licitações
-                                    e transparência pública.
-                                </p>
-
+                            <div>
+                                <div class="hero-eyebrow">Gestão Pública Inteligente</div>
+                                <h1>Tecnologia inteligente para a <span class="accent">Gestão Pública</span></h1>
+                                <p>Sistemas completos para contabilidade, folha de pagamento, contratos, licitações e
+                                    transparência pública.</p>
                                 <div class="hero-actions">
-                                    <a href="#" class="btn btn-primary btn-lg">
-                                        Conhecer Soluções
-                                    </a>
+                                    <a href="#" class="btn-custom-primary">Conhecer Soluções <i
+                                            class="bi bi-arrow-right"></i></a>
+                                    <a href="#" class="btn-custom-outline">Falar com vendas</a>
                                 </div>
                             </div>
-
                             <div class="hero-image">
                                 <img src="assets/img/betha.jpg" alt="Sistema Custom">
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -188,75 +210,55 @@
                 <div class="carousel-item">
                     <div class="hero-wrapper">
                         <div class="hero-slide">
-
-                            <div class="hero-text">
-                                <h1>
-                                    Fale com a
-                                    <span>BETH!</span>
-                                </h1>
-
-                                <p>
-                                    É a solução para tornar os atendimentos dos municípios mais ágeis e eficientes,
-                                    garantindo total segurança e conformidade com a LGPD.
-                                </p>
-
+                            <div>
+                                <div class="hero-eyebrow">Inovação em Atendimento</div>
+                                <h1>Fale com a <span class="accent">BETH!</span></h1>
+                                <p>A solução para tornar os atendimentos dos municípios mais ágeis e eficientes,
+                                    garantindo total segurança e conformidade com a LGPD.</p>
                                 <div class="hero-actions">
-                                    <a href="#" class="btn btn-primary btn-lg">
-                                        Ver Módulos
-                                    </a>
+                                    <a href="#" class="btn-custom-primary">Ver Módulos <i
+                                            class="bi bi-arrow-right"></i></a>
+                                    <a href="#" class="btn-custom-outline">Saiba mais</a>
                                 </div>
                             </div>
-
                             <div class="hero-image">
-                                <img src="assets/img/bethe.jpg" alt="Transparência">
+                                <img src="assets/img/bethe.jpg" alt="BETH">
                             </div>
-
                         </div>
                     </div>
                 </div>
 
+                <!-- SLIDE 3 -->
                 <div class="carousel-item">
                     <div class="hero-wrapper">
                         <div class="hero-slide">
-
-                            <div class="hero-text">
-                                <h1>
-                                    Municípios digitalizados avançam em
-                                    <span>ranking nacional</span>
+                            <div>
+                                <div class="hero-eyebrow">Transformação Digital</div>
+                                <h1>Municípios digitalizados avançam em <span class="accent">ranking nacional</span>
                                 </h1>
-
-                                <p>
-                                    Ganhos em transparência e governança no PNTP mostram como a transformação digital e
-                                    o uso de tecnologias fortalecem práticas públicas.
-                                </p>
-
+                                <p>Ganhos em transparência e governança no PNTP mostram como a transformação digital e o
+                                    uso de tecnologias fortalecem práticas públicas.</p>
                                 <div class="hero-actions">
-                                    <a href="#" class="btn btn-primary btn-lg">
-                                        Ver Módulos
-                                    </a>
+                                    <a href="#" class="btn-custom-primary">Ver Resultados <i
+                                            class="bi bi-arrow-right"></i></a>
+                                    <a href="#" class="btn-custom-outline">Casos de sucesso</a>
                                 </div>
                             </div>
-
                             <div class="hero-image">
-                                <img src="assets/img/digitalizados.jpg" alt="Transparência">
+                                <img src="assets/img/digitalizados.jpg" alt="Transformação Digital">
                             </div>
-
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <!-- CONTROLES -->
             <div class="hero-wrapper">
                 <div class="hero-controls">
-                    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel"
-                        data-bs-slide="prev">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
                         <i class="bi bi-chevron-left"></i>
                     </button>
-
-                    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel"
-                        data-bs-slide="next">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
                         <i class="bi bi-chevron-right"></i>
                     </button>
                 </div>
@@ -265,256 +267,273 @@
         </div>
     </section>
 
+    <!-- ══════════════════ STATS ══════════════════ -->
+    <div class="stats-bar">
+        <div class="stats-inner">
+            <div class="stat-item">
+                <div class="stat-number">500<span>+</span></div>
+                <div class="stat-label">Municípios atendidos</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">20<span>+</span></div>
+                <div class="stat-label">Anos de experiência</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50<span>M+</span></div>
+                <div class="stat-label">Cidadãos impactados</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98<span>%</span></div>
+                <div class="stat-label">Satisfação dos clientes</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ══════════════════ ESPECIALIDADES ══════════════════ -->
     <section class="especialidades">
-        <div class="row align-items-center g-4 g-xl-2">
-            <div class="col-12 col-lg-6 order-2 order-lg-1">
-                <div class="especialidades-text-block">
-                    <h1 class="especialidades__title">
-                        Especialista em software para gestão pública
-                    </h1>
+        <div class="especialidades-inner">
+            <div class="especialidades-text">
+                <span class="section-label">Nossa especialidade</span>
+                <h2>Especialista em software para gestão pública</h2>
+                <p>Somos líderes em desenvolvimento de soluções de tecnologia para gestão pública. Entendemos que cada
+                    cidade é um órgão vivo. Por isso, nosso papel não é apenas olhar ou pensar, é resolver e oferecer os
+                    melhores caminhos, sempre.</p>
 
-                    <p class="especialidades__text">
-                        Somos líderes em desenvolvimento de soluções de tecnologia para gestão pública. Entendemos que
-                        cada cidade é um órgão vivo. Por isso, nosso papel não é apenas olhar ou pensar, é resolver e
-                        oferecer os melhores caminhos, sempre.
-                    </p>
+                <ul class="feature-list">
+                    <li>
+                        <span class="check"><i class="bi bi-check-lg"></i></span>
+                        Conformidade com legislação municipal, estadual e federal
+                    </li>
+                    <li>
+                        <span class="check"><i class="bi bi-check-lg"></i></span>
+                        Integração nativa entre todos os módulos do sistema
+                    </li>
+                    <li>
+                        <span class="check"><i class="bi bi-check-lg"></i></span>
+                        Suporte especializado em gestão pública 24/7
+                    </li>
+                    <li>
+                        <span class="check"><i class="bi bi-check-lg"></i></span>
+                        Atualizações automáticas com mudanças na legislação
+                    </li>
+                </ul>
 
-                    <div class="button">
-                        <a class="btn btn-primary" href="">Conheça as Soluções Custom</a>
-                    </div>
-                </div>
+                <a href="#" class="btn-custom-primary">
+                    Conheça as Soluções <i class="bi bi-arrow-right"></i>
+                </a>
             </div>
-            <div class="col-12 col-lg-6 order-1 order-lg-2">
-                <div>
-                    <img src="./assets/img/especialidades.png" alt="Especialidade" class="img-fluid">
-                </div>
+
+            <div class="especialidades-image">
+                <img src="./assets/img/especialidades-pc.png" alt="Especialidade Custom">
             </div>
         </div>
     </section>
 
+
+    <!-- ══════════════════ TECNOLOGIAS ══════════════════ -->
     <section class="tecnologias">
-        <div class="tecnologias-wrapper">
+        <div class="tecnologias-inner">
+            <div class="tecnologias-text">
+                <span class="section-label">Nossas tecnologias</span>
+                <h2>Tudo que a sua cidade pode se tornar</h2>
+                <p>Tudo o que fazemos dentro da Custom tem uma finalidade: atender as necessidades de pessoas e cidades
+                    que precisam se movimentar e evoluir.</p>
+                <a href="#" class="btn-custom-primary">
+                    Ver tecnologias <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
 
-            <!-- GRID PRINCIPAL -->
-            <div class="tecnologias-layout">
-
-                <!-- COLUNA ESQUERDA -->
-                <div class="tecnologias-content">
-                    <h2 class="tecnologias__title">
-                        Tudo que a sua cidade pode se tornar
-                    </h2>
-
-                    <p class="tecnologias__text">
-                        Tudo o que fazemos dentro da Custom tem uma finalidade:
-                        atender as necessidades de pessoas e cidades que precisam
-                        se movimentar e evoluir.
-                    </p>
-
-                    <a href="#" class="btn btn-primary btn-lg">
-                        Mais sobre as nossas tecnologias
-                    </a>
-                </div>
-
-                <!-- COLUNA DIREITA -->
-                <div class="tecnologias-grid">
-
-                    <div class="tech-item">
-                        <i class="bi bi-cpu"></i>
-                        Machine Learning
-                    </div>
-
-                    <div class="tech-item">
-                        <i class="bi bi-wifi"></i>
-                        IoT
-                    </div>
-
-                    <div class="tech-item">
-                        <i class="bi bi-person-bounding-box"></i>
-                        Reconhecimento Facial
-                    </div>
-
-                    <div class="tech-item">
-                        <i class="bi bi-database"></i>
-                        Big Data
-                    </div>
-
-                    <div class="tech-item">
-                        <i class="bi bi-mic"></i>
-                        Reconhecimento de Voz
-                    </div>
-
-                    <div class="tech-item">
-                        <i class="bi bi-robot"></i>
-                        Inteligência Artificial
-                    </div>
-
-                    <div class="tech-item">
-                        <i class="bi bi-heart-pulse"></i>
-                        Telemedicina
-                    </div>
-
-                    <div class="tech-item">
-                        <i class="bi bi-cloud"></i>
-                        Cloud
-                    </div>
-
-                </div>
-
-
+            <div class="tech-grid">
+                <div class="tech-card"><i class="bi bi-cpu"></i><span>Machine Learning</span></div>
+                <div class="tech-card"><i class="bi bi-wifi"></i><span>IoT</span></div>
+                <div class="tech-card"><i class="bi bi-person-bounding-box"></i><span>Rec. Facial</span></div>
+                <div class="tech-card"><i class="bi bi-database"></i><span>Big Data</span></div>
+                <div class="tech-card"><i class="bi bi-mic"></i><span>Rec. de Voz</span></div>
+                <div class="tech-card"><i class="bi bi-robot"></i><span>IA</span></div>
+                <div class="tech-card"><i class="bi bi-heart-pulse"></i><span>Telemedicina</span></div>
+                <div class="tech-card"><i class="bi bi-cloud"></i><span>Cloud</span></div>
+                <div class="tech-card"><i class="bi bi-lock-fill"></i><span>Cibersegurança</span></div>
             </div>
         </div>
     </section>
 
 
+    <!-- ══════════════════ CARREIRAS ══════════════════ -->
     <section class="carreiras">
-        <div class="carreiras-wrapper">
+        <div class="carreiras-inner">
+            <div class="carreiras-text">
+                <span class="section-label">Carreiras</span>
+                <h2>Pessoas que constroem o futuro das cidades</h2>
+                <p>Aqui na Custom, tecnologia é meio — não fim. Desenvolvemos soluções que impactam diretamente milhões
+                    de pessoas, com propósito, responsabilidade e orgulho do que entregamos.</p>
 
-            <div class="carreiras-layout">
+                <ul class="benefit-list">
+                    <li><i class="bi bi-check-circle-fill"></i> Impacto social real e mensurável</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Crescimento profissional contínuo</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Ambiente colaborativo e inclusivo</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Remuneração competitiva e benefícios</li>
+                </ul>
 
-                <!-- CONTEÚDO -->
-                <div class="carreiras-content">
-                    <span class="carreiras-eyebrow">Carreiras</span>
+                <a href="#" class="btn-custom-primary">
+                    Ver vagas abertas <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
 
-                    <h2 class="carreiras-title">
-                        Pessoas que constroem<br>
-                        o futuro das cidades
-                    </h2>
-
-                    <p class="carreiras-text">
-                        Aqui na Custom, tecnologia é meio — não fim.
-                        Desenvolvemos soluções que impactam diretamente
-                        milhões de pessoas, com propósito, responsabilidade
-                        e orgulho do que entregamos.
-                    </p>
-
-                    <ul class="carreiras-benefits">
-                        <li><i class="bi bi-check-circle"></i> Impacto social real</li>
-                        <li><i class="bi bi-check-circle"></i> Crescimento profissional contínuo</li>
-                        <li><i class="bi bi-check-circle"></i> Ambiente colaborativo</li>
-                    </ul>
-
-                    <a href="#" class="btn btn-primary btn-lg">
-                        Ver vagas abertas
-                    </a>
+            <div class="carreiras-image">
+                <img src="assets/img/carreira.jpeg" alt="Time Custom">
+                <div class="carreiras-badge">
+                    <i class="bi bi-people-fill"></i>
+                    <div>
+                        <strong>+200</strong>
+                        <span>colaboradores</span>
+                    </div>
                 </div>
-
-                <!-- IMAGEM -->
-                <div class="carreiras-image">
-                    <img src="assets/img/carreira.jpeg" alt="Time Custom">
-                </div>
-
             </div>
         </div>
     </section>
 
 
+    <!-- ══════════════════ FAQ ══════════════════ -->
     <section class="faq">
-        <div class="container-xl">
-            <h2 class="text-center mb-5">Perguntas Frequentes</h2>
+        <div class="faq-inner">
+            <div class="faq-header">
+                <span class="section-label" style="display:block;text-align:center;margin-bottom:10px;">FAQ</span>
+                <h2>Perguntas Frequentes</h2>
+                <p>Tire suas dúvidas sobre nossas soluções e serviços.</p>
+            </div>
 
-            <div class="accordion" id="faqAccordion">
-
-                <!-- ITEM 1 (ABERTO) -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Como a Custom atende a gestão pública?
-                        </button>
-                    </h2>
-
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Desenvolvemos soluções completas focadas em legislação,
-                            transparência e eficiência administrativa.
-                        </div>
+            <div class="faq-item open" onclick="toggleFaq(this)">
+                <button class="faq-question">
+                    Como a Custom atende a gestão pública?
+                    <span class="icon"><i class="bi bi-plus-lg"></i></span>
+                </button>
+                <div class="faq-answer" style="max-height: 200px;">
+                    <div class="faq-answer-inner">
+                        Desenvolvemos soluções completas focadas em legislação, transparência e eficiência
+                        administrativa. Cada módulo é projetado especificamente para os desafios da gestão municipal,
+                        com atualizações contínuas para acompanhar mudanças na legislação.
                     </div>
                 </div>
+            </div>
 
-                <!-- ITEM 2 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Como as soluções da Custom contribuem para a transparência pública?
-                        </button>
-                    </h2>
-
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Nossas plataformas garantem acesso claro às informações
-                            públicas e conformidade com a legislação vigente.
-                        </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <button class="faq-question">
+                    Como as soluções da Custom contribuem para a transparência pública?
+                    <span class="icon"><i class="bi bi-plus-lg"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Nossas plataformas garantem acesso claro às informações públicas e conformidade com a legislação
+                        vigente. O Portal da Transparência da Custom já atende centenas de municípios, facilitando o
+                        cumprimento da Lei de Acesso à Informação.
                     </div>
                 </div>
+            </div>
 
-                <!-- ITEM 3 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            De que forma a Custom apoia a modernização da gestão municipal?
-                        </button>
-                    </h2>
-
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Automatizamos processos, integramos sistemas e reduzimos
-                            burocracias para uma gestão mais eficiente.
-                        </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <button class="faq-question">
+                    De que forma a Custom apoia a modernização da gestão municipal?
+                    <span class="icon"><i class="bi bi-plus-lg"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Automatizamos processos, integramos sistemas e reduzimos burocracias para uma gestão mais
+                        eficiente. Nossa abordagem inclui treinamento completo da equipe, migração de dados e suporte
+                        dedicado durante toda a implementação.
                     </div>
                 </div>
+            </div>
 
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <button class="faq-question">
+                    Qual é o prazo típico para implementação dos sistemas?
+                    <span class="icon"><i class="bi bi-plus-lg"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        O prazo varia conforme os módulos contratados e a complexidade do município. Em média, a
+                        implementação completa leva de 60 a 120 dias, com um processo estruturado de migração e
+                        treinamento para garantir uma transição sem impactos operacionais.
+                    </div>
+                </div>
             </div>
 
         </div>
     </section>
 
-    <section class="newsletter">
-        <div class="container-xl text-center">
-            <h2>Receba conteúdos sobre gestão pública</h2>
-            <p>Insights, novidades e tecnologia direto no seu e-mail.</p>
 
-            <form class="newsletter-form">
+    <!-- ══════════════════ NEWSLETTER ══════════════════ -->
+    <section class="newsletter">
+        <div class="newsletter-inner">
+            <div class="chip">Newsletter</div>
+            <h2>Receba conteúdos sobre gestão pública</h2>
+            <p>Insights, novidades e tecnologia direto no seu e-mail. Sem spam.</p>
+            <form class="newsletter-form" onsubmit="return false;">
                 <input type="email" placeholder="Seu melhor e-mail">
-                <button class="btn btn-primary">Inscrever</button>
+                <button class="btn-custom-primary" type="submit">Inscrever</button>
             </form>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container-xl">
-            <div class="row g-4">
 
-                <div class="col-12 col-lg-4">
-                    <strong>Custom Sistemas</strong>
-                    <p>Soluções inteligentes para gestão pública.</p>
+    <!-- ══════════════════ FOOTER ══════════════════ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="brand-name">Custom</div>
+                    <p>Soluções inteligentes para gestão pública. Tecnologia que transforma cidades.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    </div>
                 </div>
 
-                <div class="col-6 col-lg-4">
-                    <h6>Institucional</h6>
+                <div class="footer-col">
+                    <h6>Soluções</h6>
                     <ul>
-                        <li><a href="#">Sobre</a></li>
-                        <li><a href="#">Carreira</a></li>
+                        <li><a href="#">Gestão Financeira</a></li>
+                        <li><a href="#">Gestão de Pessoas</a></li>
+                        <li><a href="#">Gestão Administrativa</a></li>
+                        <li><a href="#">Transparência</a></li>
                     </ul>
                 </div>
 
-                <div class="col-6 col-lg-4">
-                    <h6>Contato</h6>
-                    <p>contato@custom.com.br</p>
+                <div class="footer-col">
+                    <h6>Institucional</h6>
+                    <ul>
+                        <li><a href="#">Sobre a Custom</a></li>
+                        <li><a href="#">Carreira</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Eventos</a></li>
+                    </ul>
                 </div>
 
+                <div class="footer-col">
+                    <h6>Contato</h6>
+                    <ul>
+                        <li><a href="#">contato@customsistemas.com.br</a></li>
+                        <li><a href="#">Suporte Técnico</a></li>
+                        <li><a href="#">Treinamentos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Custom Sistemas. Todos os direitos reservados.</p>
+                <p>Política de Privacidade · Termos de Uso</p>
             </div>
         </div>
     </footer>
 
 
-    <!-- Bootstrap JS -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/mega-menu.js"></script>
+    <script src="assets/js/faq.js"></script>
 
 </body>
 
