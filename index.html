@@ -64,15 +64,33 @@
             <div class="nav-actions">
                 <a href="#" class="btn-custom-primary">
                     <i class="bi bi-people-fill"></i>
-                    Suporte Técnico
+                    <span class="nav-actions-text">Suporte Técnico</span>
                 </a>
             </div>
+
+            <button class="nav-search-trigger" onclick="openSearch()" aria-label="Buscar">
+                <i class="bi bi-search"></i>
+            </button>
 
             <button class="nav-hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <input type="text" placeholder="O que você procura?" aria-label="Buscar no site">
+
+            <i class="bi bi-search"></i>
+
+            <button class="search-close" onclick="closeSearch()" aria-label="Fechar busca">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+    </div>
+
 
     <!-- ══════════════════ MEGA MENU ══════════════════ -->
     <div class="mega-overlay" id="megaOverlay" onclick="closeMega()">

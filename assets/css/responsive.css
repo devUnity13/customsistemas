@@ -180,3 +180,13 @@
          order: -1;
      }
  }
+
+ @media (max-width: 768px) {
+     .search-box {
+         width: 90%;
+     }
+
+     .search-close {
+         right: -40px;
+     }
+ }
