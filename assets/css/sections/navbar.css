@@ -225,7 +225,7 @@
      border: none;
      color: #fff;
      font-size: 22px;
-     reveal: pointer;
+     resize: pointer;
      cursor: pointer;
  }
 

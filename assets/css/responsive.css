@@ -190,3 +190,20 @@
          right: -40px;
      }
  }
+
+ @media (max-width: 991px) {
+     .nav-mobile-actions {
+         display: flex;
+         align-items: center;
+         gap: 14px;
+         margin-left: auto;
+     }
+
+     .nav-search-trigger {
+         font-size: 20px;
+         color: #0d6efd;
+         background: none;
+         border: none;
+         cursor: pointer;
+     }
+ }
